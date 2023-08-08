@@ -5,6 +5,9 @@ metadata:
 spec:
   containers:
     - name: client
+      selector: 
+       matchlabels:
+        app: client
       image:  kndungi/clentend1
       ports:
         - containerPort: 5000
@@ -12,6 +15,9 @@ spec:
         - mountPath: ./client/src:/usr/app/src
           name: week_9_ip
     - name: backend
+      selector:
+       matchlabels:
+        app: backend
       image: kndungi/backend1
       ports:
         - containerPort: 3080
@@ -19,6 +25,9 @@ spec:
         - mountPath: ./backend/src:/usr/app/src
           name: week_9_ip
     - name: db
+      selector:
+       matchlabels:
+        app: db
       image: mongo
       ports:
         - containerPort: 27017
