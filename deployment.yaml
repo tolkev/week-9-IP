@@ -11,4 +11,11 @@ spec:
       volumeMounts:
         - mountPath: ./client/src:/usr/app/src
           name: week_9_ip
+    - name: backend
+      image: kndungi/backend1
+      ports:
+        - containerPort: 3080
+      volumeDevices:
+        - devicePath: ./backend/src:/usr/app/src
+          name: week_9_ip
 
