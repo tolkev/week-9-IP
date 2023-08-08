@@ -15,7 +15,15 @@ spec:
       image: kndungi/backend1
       ports:
         - containerPort: 3080
-      volumeDevices:
-        - devicePath: ./backend/src:/usr/app/src
+      volumeMounts:
+        - mountPath: ./backend/src:/usr/app/src
           name: week_9_ip
+    - name: db
+      image: mongo
+      ports:
+        - containerPort: 27017
+      volumeMounts:
+        - mountPath: mongo-data:/data/db
+          name: week_9_ip
+ 
 
