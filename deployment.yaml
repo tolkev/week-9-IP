@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: week_9_ip
+spec:
+  containers:
+    - name: client
+      image:  kndungi/clentend1
+      ports:
+        - containerPort: 5000
+      volumeMounts:
+        - mountPath: ./client/src:/usr/app/src
+          name: week_9_ip
+
