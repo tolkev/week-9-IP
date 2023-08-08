@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: week_9_ip
+  name: week-9-ip
 spec:
   containers:
     - name: client
@@ -10,23 +10,23 @@ spec:
         - containerPort: 5000
       volumeMounts:
         - mountPath: ./client/src:/usr/app/src
-          name: week_9_ip
+          name: week9
     - name: backend
       image: kndungi/backend1
       ports:
         - containerPort: 3080
       volumeMounts:
         - mountPath: ./backend/src:/usr/app/src
-          name: week_9_ip
+          name: week9
     - name: db
       image: mongo
       ports:
         - containerPort: 27017
       volumeMounts:
         - mountPath: mongo-data:/data/db
-          name: week_9_ip
+          name: week9
   volumes:
-    - name: week_9_ip
+    - name: week9
       emptyDir: {}
         
  
