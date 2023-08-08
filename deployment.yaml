@@ -25,5 +25,9 @@ spec:
       volumeMounts:
         - mountPath: mongo-data:/data/db
           name: week_9_ip
+  volumes:
+    - name: week_9_ip
+      emptyDir: {}
+        
  
 
